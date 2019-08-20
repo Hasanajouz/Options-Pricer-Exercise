@@ -1,0 +1,71 @@
+﻿<Window x:Class="OptionsPricer.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OptionsPricer.Views"
+        mc:Ignorable="d"
+        Title="{Binding Title}" Height="450" Width="800" Background="#FF1D1C1C" FontFamily="Segoe UI Light" FontSize="18">
+    <Window.Resources>
+        <Style x:Key="LabelStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="LightGray" />
+            <Setter Property="TextAlignment" Value="Right" />
+        </Style>
+    </Window.Resources>
+    
+    <Grid Margin="0,0,93,-10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="15"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="15"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="40" Text="{Binding Title}" Grid.ColumnSpan="3" FontWeight="Bold" Foreground="White" Margin="0,0,0,25"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding ErrorMsg}" Foreground="OrangeRed" TextAlignment="Center" Grid.ColumnSpan="3"/>
+
+
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Stock price (S)" Style="{StaticResource LabelStyle}"/>
+        <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding S,Mode=OneWayToSource}" Width="150" Margin="5,4" TextAlignment="Center"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="Strike price (K)" Style="{StaticResource LabelStyle}"/>
+        <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding K,Mode=OneWayToSource}" Width="150" Margin="5,4" TextAlignment="Center"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="Time to maturity in years (t)" Style="{StaticResource LabelStyle}"/>
+        <TextBox Grid.Column="2" Grid.Row="5" Text="{Binding t,Mode=OneWayToSource}" Width="150" Margin="5,4" TextAlignment="Center"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="6" Text="Standard deviation of underlying stock (σ)" Style="{StaticResource LabelStyle}"/>
+        <TextBox Grid.Column="2" Grid.Row="6" Text="{Binding sigma,Mode=OneWayToSource}" Width="150" Margin="5,4" TextAlignment="Center"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="7" Text="Risk-free interest rate (r)" Style="{StaticResource LabelStyle}"/>
+        <TextBox Grid.Column="2" Grid.Row="7" Text="{Binding r,Mode=OneWayToSource}" Width="150" Margin="5,4" TextAlignment="Center" />
+
+        <Button Grid.Column="2" Grid.Row="8" Content="Calculate" Background="#FF5F5B5B" Foreground="White" Margin="10,15" Command="{Binding CalculatePricesCommand}"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="9" Text="Call (c)" Style="{StaticResource LabelStyle}"/>
+        <TextBlock Grid.Column="2" Grid.Row="9" Text="{Binding CallPrice,Mode=OneWay,StringFormat=N4}" Foreground="White" TextAlignment="Center" />
+
+        <TextBlock Grid.Column="1" Grid.Row="10" Text="Put (p)" Style="{StaticResource LabelStyle}"/>
+        <TextBlock Grid.Column="2" Grid.Row="10" Text="{Binding PutPrice,Mode=OneWay,StringFormat=N4}" Foreground="White" TextAlignment="Center" />
+
+
+    </Grid>
+</Window>
