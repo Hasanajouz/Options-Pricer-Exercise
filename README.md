@@ -49,7 +49,7 @@ After I created the view main page.
 And I tried to show small example about local styles.
 ![alt text](https://raw.githubusercontent.com/hasanajouz/Options-Pricer-Exercise/master/Images/binding.jpg)
 
-![alt text](https://raw.githubusercontent.com/hasanajouz/Options-Pricer-Exercise/master/Images/empty ui.jpg)
+![alt text](https://raw.githubusercontent.com/hasanajouz/Options-Pricer-Exercise/master/Images/empty_ui.jpg)
 
 ![alt text](https://raw.githubusercontent.com/hasanajouz/Options-Pricer-Exercise/master/Images/ui_with_error_message.jpg)
 
